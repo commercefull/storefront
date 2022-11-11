@@ -1,4 +1,4 @@
-# GoStorefront
+# Commercefull Storefront
 A storefront for the headless world
 
 # Local Dev
