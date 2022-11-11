@@ -1,4 +1,4 @@
-.PHONY: build synth diff deploy zip clean fmt lint destroy
+.PHONY: start fmt lint test tidy
 
 start:
 	nodemon -e go,json,html --exec go run ./cmd/serve/main.go --signal SIGTERM
