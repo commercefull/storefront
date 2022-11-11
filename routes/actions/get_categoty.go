@@ -1,0 +1,26 @@
+package actions
+
+import (
+	"storefront/connectors"
+	"storefront/pkg/response"
+	"storefront/template"
+)
+
+type GetCategoryPageData struct {
+	Head  template.Head
+	Title string
+}
+
+func GetCategory(args ...string) (response.Response, error) {
+
+	b := connectors.Connector{Page: "category"}
+	b.Category()
+	data := GetCategoryPageData{Title: "Category"}
+	body, err := template.Load("category", data)
+
+	if err != nil {
+		return response.InternalServerError(), err
+	}
+
+	return response.HttpResponse(body, 200), nil
+}
